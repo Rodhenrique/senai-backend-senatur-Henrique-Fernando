@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Senai.Senatur.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:Senai.Senatur.WebApi.Controllers.LoginController.Post(Senai.Senatur.WebApi.ViewModel.LoginViewModel)">
+            <summary>
+            Controller responsável pelos login Senatur
+            </summary>
+            <response code="200">Returns the newly Accepted item</response>
+            <response code="404">If the item is null</response> 
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.PacoteController.Get">
+            <summary>
+            Controller responsável pelos login Senatur
+            </summary>
+            <response code="200">Returns the newly Accepted item</response>
+            <response code="404">If the item is null</response> 
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.PacoteController.Get(System.Int32)">
+            <summary>
+            Controller responsável pelos login Senatur
+            </summary>
+            <response code="200">Returns the newly Accepted item</response>
+            <response code="404">If the item is null</response> 
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.PacoteController.Get(Senai.Senatur.WebApi.Domains.Pacotes)">
+            <summary>
+            Controller responsável pelos login Senatur
+            </summary>
+            <response code="200">Returns the newly Accepted item</response>
+            <response code="404">If the item is null</response> 
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.PacoteController.atualizar(Senai.Senatur.WebApi.Domains.Pacotes)">
+            <summary>
+            Controller responsável pelos login Senatur
+            </summary>
+            <response code="200">Returns the newly Accepted item</response>
+            <response code="404">If the item is null</response> 
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.PacoteController.deletar(System.Int32)">
+            <summary>
+            Controller responsável pelos login Senatur
+            </summary>
+            <response code="200">Returns the newly Accepted item</response>
+            <response code="404">If the item is null</response> 
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.TipoUsuarioController.Get">
+            <summary>
+            Controller responsável pelo listar do Senatur
+            </summary>
+            <response code="200">retorno uma listar de Tipos de usuarios</response>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.TipoUsuarioController.Get(System.Int32)">
+            <summary>
+            Controller responsável pelos login Senatur
+            </summary>
+            <response code="200">retorna um usuario buscado pelo id</response>
+            <response code="404">caso não retorna um not found</response> 
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.TipoUsuarioController.Get(Senai.Senatur.WebApi.Domains.TiposUsuario)">
+            <summary>
+            Controller responsável pelos login Senatur
+            </summary>
+            <response code="200">Returns the newly Accepted item</response>
+            <response code="404">If the item is null</response> 
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.TipoUsuarioController.atualizar(Senai.Senatur.WebApi.Domains.TiposUsuario)">
+            <summary>
+            Controller responsável pelos login Senatur
+            </summary>
+            <response code="200">Returns the newly Accepted item</response>
+            <response code="404">If the item is null</response> 
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.TipoUsuarioController.deletar(System.Int32)">
+            <summary>
+            Controller responsável pelos login Senatur
+            </summary>
+            <response code="200">Returns the newly Accepted item</response>
+            <response code="404">If the item is null</response> 
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.UsuarioController.Get">
+            <summary>
+            Controller responsável pelos login Senatur
+            </summary>
+            <response code="200">Returns the newly Accepted item</response>
+            <response code="404">If the item is null</response> 
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.UsuarioController.Get(System.Int32)">
+            <summary>
+            Controller responsável pelos login Senatur
+            </summary>
+            <response code="200">Returns the newly Accepted item</response>
+            <response code="404">If the item is null</response> 
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.UsuarioController.Get(Senai.Senatur.WebApi.Domains.Usuarios)">
+            <summary>
+            Controller responsável pelos login Senatur
+            </summary>
+            <response code="200">Returns the newly Accepted item</response>
+            <response code="404">If the item is null</response> 
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.UsuarioController.atualizar(Senai.Senatur.WebApi.Domains.Usuarios)">
+            <summary>
+            Controller responsável pelos login Senatur
+            </summary>
+            <response code="200">Returns the newly Accepted item</response>
+            <response code="404">If the item is null</response> 
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.UsuarioController.deletar(System.Int32)">
+            <summary>
+            Controller responsável pelos login Senatur
+            </summary>
+            <response code="200">Returns the newly Accepted item</response>
+            <response code="404">If the item is null</response> 
+        </member>
+    </members>
+</doc>
