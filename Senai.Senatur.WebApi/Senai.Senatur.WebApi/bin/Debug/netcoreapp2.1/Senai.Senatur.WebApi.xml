@@ -43,6 +43,12 @@
             </summary>
             <response code="202">retorna um aceito e deletar seu pacote</response>
         </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.PacoteController.ListarPorAtivo">
+            <summary>
+            Controller responsável por listar os pacotes de viagens da Senatur
+            </summary>
+            <response code="200">retorna um ok e uma listar</response>
+        </member>
         <member name="M:Senai.Senatur.WebApi.Controllers.TipoUsuarioController.Get">
             <summary>
             Controller responsável pelo listar os tipos de usuarios da Senatur

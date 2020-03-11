@@ -56,5 +56,15 @@ namespace Senai.Senatur.WebApi.Repositories
         {
             return ctx.Pacotes.ToList();
         }
+
+        public List<Pacotes> ListarPacoteAtivos()
+        {
+            return ctx.Pacotes.ToList().FindAll(p => p.Ativo == true);
+        }
+
+        public List<Pacotes> ListarPacoteInativo()
+        {
+            return ctx.Pacotes.ToList().FindAll(p => p.Ativo == false);
+        }
     }
 }

@@ -17,5 +17,10 @@ namespace Senai.Senatur.WebApi.Interfaces
         void AtualizarIdCorpo(Pacotes pacotes);
 
         void Deletar(int id);
+
+        List<Pacotes> ListarPacoteAtivos();
+
+        List<Pacotes> ListarPacoteInativo();
+
     }
 }
