@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.Senatur.WebApi.Domains;
@@ -26,6 +27,7 @@ namespace Senai.Senatur.WebApi.Controllers
         /// Controller responsável pelo listar os tipos de usuarios da Senatur
         /// </summary>
         /// <response code="200">retorno uma listar de Tipos de usuarios</response>
+        [Authorize]
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public IActionResult Get()
@@ -38,6 +40,7 @@ namespace Senai.Senatur.WebApi.Controllers
         /// </summary>
         /// <response code="200">retorna um usuario buscado pelo id</response>
         /// <response code="404">caso não retorna um not found</response> 
+        [Authorize]
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -59,25 +62,28 @@ namespace Senai.Senatur.WebApi.Controllers
         /// </summary>
         /// <response code="201">retorna um criado e criar um novo tipo de usuario</response>
         /// <response code="404">caso estiver um campo nulo retorna um Not Found</response> 
+        [Authorize(Roles = "1")]
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult Get(TiposUsuario tiposUsuario)
         {
-            if(tiposUsuario == null)
+            if (tiposUsuario == null)
             {
                 return NotFound("Seu Tipo Usuario esta com algun campo não preencido");
-            }else
+            }
+            else
             {
-            _tipoUsuarioRepository.AdicionarTipoUsuario(tiposUsuario);
-            return StatusCode(201,"seu tipo usuario foi criado");
+                _tipoUsuarioRepository.AdicionarTipoUsuario(tiposUsuario);
+                return StatusCode(201, "seu tipo usuario foi criado");
             }
         }
 
         /// <summary>
-        /// Controller responsável pelos atualizar um tipo usuario existente Senatur
+        /// Controller responsável em atualizar um tipo de usuario existente Senatur
         /// </summary>
         /// <response code="202">retorna um aceito e atualizar o seu Tipo Usuario</response>
+        [Authorize(Roles = "1")]
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status202Accepted)]
         public IActionResult atualizar(TiposUsuario tiposUsuario)
@@ -90,6 +96,7 @@ namespace Senai.Senatur.WebApi.Controllers
         /// Controller responsável pelos deletar um tipo usuario Senatur
         /// </summary>
         /// <response code="202">retorna um aceito e deletar o seu Tipo Usuario</response>
+        [Authorize(Roles = "1")]
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status202Accepted)]
         public IActionResult deletar(int id)
