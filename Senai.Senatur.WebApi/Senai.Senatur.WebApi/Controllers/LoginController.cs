@@ -29,8 +29,8 @@ namespace Senai.Senatur.WebApi.Controllers
         /// <summary>
         /// Controller responsável pelos login Senatur
         /// </summary>
-        /// <response code="200">Returns the newly Accepted item</response>
-        /// <response code="404">If the item is null</response> 
+        /// <response code="200">retorna um ok e um token de autorização dependedo do seu tipo usuario</response>
+        /// <response code="404">caso estiver invalido um email ou senha,ou não existe retorna Um Not Found</response> 
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]

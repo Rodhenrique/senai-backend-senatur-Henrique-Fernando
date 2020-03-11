@@ -23,71 +23,79 @@ namespace Senai.Senatur.WebApi.Controllers
         }
 
         /// <summary>
-        /// Controller responsável pelos login Senatur
+        /// Controller responsável por listar os pacotes de viagens da Senatur
         /// </summary>
-        /// <response code="200">Returns the newly Accepted item</response>
-        /// <response code="404">If the item is null</response> 
+        /// <response code="200">retorna um ok e uma listar</response>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult Get()
         {
             return Ok(_pacoteRepository.Listar());
         }
 
         /// <summary>
-        /// Controller responsável pelos login Senatur
+        /// Controller responsável pelos buscar pelo Id Mandar um Id Retorna o pacote daquele Id do Senatur
         /// </summary>
-        /// <response code="200">Returns the newly Accepted item</response>
-        /// <response code="404">If the item is null</response> 
+        /// <response code="200">retorna um usuario do Id Solicitando</response>
+        /// <response code="404">caso Id não existe retorna um Not Found</response> 
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult Get(int id)
         {
-            return Ok(_pacoteRepository.BuscarPorId(id));
+            var buscar = _pacoteRepository.BuscarPorId(id);
+            if (buscar == null)
+            {
+                return NotFound("Id não existe");
+            }
+            else
+            {
+                return Ok(buscar);
+            }
         }
 
         /// <summary>
-        /// Controller responsável pelos login Senatur
+        /// Controller responsável pelos Cadastrar um novo pacote de viagens da Senatur
         /// </summary>
-        /// <response code="200">Returns the newly Accepted item</response>
-        /// <response code="404">If the item is null</response> 
+        /// <response code="201">retorna um Created caso for criado</response>
+        /// <response code="404">caso estiver algun campo nulo retorna um not found</response> 
         [HttpPost]
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult Get(Pacotes pacotes)
         {
+            if(pacotes == null)
+            {
+                return NotFound("algun campo não preenchido");
+            }else
+            {
             _pacoteRepository.AdicionarPacote(pacotes);
             return StatusCode(201);
+            }
         }
 
         /// <summary>
-        /// Controller responsável pelos login Senatur
+        /// Controller responsável pelos Atualizar um pacote existente na Senatur
         /// </summary>
-        /// <response code="200">Returns the newly Accepted item</response>
-        /// <response code="404">If the item is null</response> 
+        /// <response code="202">retorna um aceito e atualizar um pacote</response>
         [HttpPut]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status202Accepted)]
         public IActionResult atualizar(Pacotes pacotes)
         {
             _pacoteRepository.AtualizarIdCorpo(pacotes);
-            return StatusCode(200, "seu TipoUsuario foi atualizado com sucesso");
+            return StatusCode(202, "seu TipoUsuario foi atualizado com sucesso");
         }
 
         /// <summary>
-        /// Controller responsável pelos login Senatur
+        /// Controller responsável pelos Deletar um pacote da Senatur
         /// </summary>
-        /// <response code="200">Returns the newly Accepted item</response>
-        /// <response code="404">If the item is null</response> 
+        /// <response code="202">retorna um aceito e deletar seu pacote</response>
         [HttpDelete("{id}")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status202Accepted)]
         public IActionResult deletar(int id)
         {
             _pacoteRepository.Deletar(id);
-            return StatusCode(200, "seu TipoUsuario foi deletado com sucesso");
+            return StatusCode(202, "seu TipoUsuario foi deletado com sucesso");
         }
     }
 }
