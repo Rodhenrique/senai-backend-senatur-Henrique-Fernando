@@ -43,6 +43,21 @@
             </summary>
             <response code="202">retorna um aceito e deletar seu pacote</response>
         </member>
+<<<<<<< HEAD:backend/Senai.Senatur.WebApi/Senai.Senatur.WebApi/bin/Debug/netcoreapp2.1/Senai.Senatur.WebApi.xml
+=======
+        <member name="M:Senai.Senatur.WebApi.Controllers.PacoteController.ListarPorAtivo">
+            <summary>
+            Controller responsável por listar os pacotes de viagens da Senatur
+            </summary>
+            <response code="200">retorna um ok e uma listar de </response>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.PacoteController.ListarPorInativo">
+            <summary>
+            Controller responsável por listar os pacotes de viagens da Senatur
+            </summary>
+            <response code="200">retorna um ok e uma listar</response>
+        </member>
+>>>>>>> parent of 9d51f02... 32 commit:Senai.Senatur.WebApi/Senai.Senatur.WebApi/obj/Debug/netcoreapp2.1/Senai.Senatur.WebApi.xml
         <member name="M:Senai.Senatur.WebApi.Controllers.TipoUsuarioController.Get">
             <summary>
             Controller responsável pelo listar os tipos de usuarios da Senatur

@@ -56,5 +56,18 @@ namespace Senai.Senatur.WebApi.Repositories
         {
             return ctx.Pacotes.ToList();
         }
+<<<<<<< HEAD:backend/Senai.Senatur.WebApi/Senai.Senatur.WebApi/Repositories/PacoteRepository.cs
+=======
+
+        public List<Pacotes> ListarPacoteAtivos()
+        {
+            return ctx.Pacotes.ToList().FindAll(p => p.Ativo == true);
+        }
+
+        public List<Pacotes> ListarPacoteInativo()
+        {
+            return ctx.Pacotes.ToList().FindAll(p => p.Ativo == false);
+        }
+>>>>>>> parent of 9d51f02... 32 commit:Senai.Senatur.WebApi/Senai.Senatur.WebApi/Repositories/PacoteRepository.cs
     }
 }
