@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Senai.Senatur.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:Senai.Senatur.WebApi.Controllers.LoginController.Post(Senai.Senatur.WebApi.ViewModel.LoginViewModel)">
+            <summary>
+            Controller responsável pelos login Senatur
+            </summary>
+            <response code="200">retorna um ok e um token de autorização dependedo do seu tipo usuario</response>
+            <response code="404">caso estiver invalido um email ou senha,ou não existe retorna Um Not Found</response> 
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.PacoteController.Get">
+            <summary>
+            Controller responsável por listar os pacotes de viagens da Senatur
+            </summary>
+            <response code="200">retorna um ok e uma listar</response>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.PacoteController.Get(System.Int32)">
+            <summary>
+            Controller responsável pelos buscar pelo Id Mandar um Id Retorna o pacote daquele Id do Senatur
+            </summary>
+            <response code="200">retorna um usuario do Id Solicitando</response>
+            <response code="404">caso Id não existe retorna um Not Found</response> 
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.PacoteController.Get(Senai.Senatur.WebApi.Domains.Pacotes)">
+            <summary>
+            Controller responsável pelos Cadastrar um novo pacote de viagens da Senatur
+            </summary>
+            <response code="201">retorna um Created caso for criado</response>
+            <response code="404">caso estiver algun campo nulo retorna um not found</response> 
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.PacoteController.atualizar(Senai.Senatur.WebApi.Domains.Pacotes)">
+            <summary>
+            Controller responsável pelos Atualizar um pacote existente na Senatur
+            </summary>
+            <response code="202">retorna um aceito e atualizar um pacote</response>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.PacoteController.deletar(System.Int32)">
+            <summary>
+            Controller responsável pelos Deletar um pacote da Senatur
+            </summary>
+            <response code="202">retorna um aceito e deletar seu pacote</response>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.TipoUsuarioController.Get">
+            <summary>
+            Controller responsável pelo listar os tipos de usuarios da Senatur
+            </summary>
+            <response code="200">retorno uma listar de Tipos de usuarios</response>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.TipoUsuarioController.Get(System.Int32)">
+            <summary>
+            Controller responsável pelos buscar um tipo de usuario pelo Id Senatur
+            </summary>
+            <response code="200">retorna um usuario buscado pelo id</response>
+            <response code="404">caso não retorna um not found</response> 
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.TipoUsuarioController.Get(Senai.Senatur.WebApi.Domains.TiposUsuario)">
+            <summary>
+            Controller responsável pelos Cadastrar um novo tipo usuario da Senatur
+            </summary>
+            <response code="201">retorna um criado e criar um novo tipo de usuario</response>
+            <response code="404">caso estiver um campo nulo retorna um Not Found</response> 
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.TipoUsuarioController.atualizar(Senai.Senatur.WebApi.Domains.TiposUsuario)">
+            <summary>
+            Controller responsável em atualizar um tipo de usuario existente Senatur
+            </summary>
+            <response code="202">retorna um aceito e atualizar o seu Tipo Usuario</response>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.TipoUsuarioController.deletar(System.Int32)">
+            <summary>
+            Controller responsável pelos deletar um tipo usuario Senatur
+            </summary>
+            <response code="202">retorna um aceito e deletar o seu Tipo Usuario</response>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.UsuarioController.Get">
+            <summary>
+            Controller responsável pelos Listar os usuarios da Senatur
+            </summary>
+            <response code="200">retornar um Ok e a listar de usuarios</response>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.UsuarioController.Get(System.Int32)">
+            <summary>
+            Controller responsável pelos buscar usuario pelo Id da Senatur
+            </summary>
+            <response code="202">retorna um aceito e o usuario buscado</response>
+            <response code="404">caso o Id NÃO EXISTE retorna Not Found</response> 
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.UsuarioController.Get(Senai.Senatur.WebApi.Domains.Usuarios)">
+            <summary>
+            Controller responsável pelos Cadastrar um novo usuario na Senatur
+            </summary>
+            <response code="201">retorna um criado e criar o usuario</response>
+            <response code="404">casp algun campo estiver nulo retorna Not Found</response> 
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.UsuarioController.atualizar(Senai.Senatur.WebApi.Domains.Usuarios)">
+            <summary>
+            Controller responsável pelos atualizar um usuario existente na Senatur
+            </summary>
+            <response code="202">retorna um aceito e atualizar o seu Usuario</response>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.UsuarioController.deletar(System.Int32)">
+            <summary>
+            Controller responsável pelos deletar um usuario na Senatur
+            </summary>
+            <response code="202">retorna um aceito e deletar o seu Usuario</response>
+        </member>
+    </members>
+</doc>
