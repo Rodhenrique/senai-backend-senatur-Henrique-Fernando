@@ -22,5 +22,9 @@ namespace Senai.Senatur.WebApi.Interfaces
 
         List<Pacotes> ListarPacoteInativo();
 
+        List<Pacotes> ListarPorCity(string city);
+
+        List<Pacotes> ListarPorPreco(int order);
+
     }
 }

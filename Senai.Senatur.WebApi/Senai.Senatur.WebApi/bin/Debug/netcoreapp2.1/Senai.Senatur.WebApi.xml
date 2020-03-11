@@ -45,13 +45,30 @@
         </member>
         <member name="M:Senai.Senatur.WebApi.Controllers.PacoteController.ListarPorAtivo">
             <summary>
-            Controller responsável por listar os pacotes de viagens da Senatur
+            Controller responsável por listar os pacotes de viagens ativas da Senatur
             </summary>
             <response code="200">retorna um ok e uma listar de </response>
         </member>
         <member name="M:Senai.Senatur.WebApi.Controllers.PacoteController.ListarPorInativo">
             <summary>
-            Controller responsável por listar os pacotes de viagens da Senatur
+            Controller responsável por listar os pacotes de viagens  inativa da Senatur
+            </summary>
+            <response code="200">retorna um ok e uma listar</response>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.PacoteController.ListarPorCity(System.String)">
+            <summary>
+            Controller responsável por listar os pacotes de viagens por nome da cidade da Senatur
+            Nome colocar o nome da cidade
+            </summary>
+            <response code="200">retorna um ok e uma listar</response>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.PacoteController.ListarPorPreco(System.Int32)">
+            <summary>
+            Controller responsável por listar os pacotes de viagens por ordenar pelo preço do pacote da Senatur
+            ser você colocar 1 em order ele retorna do baixo para o mais alto
+            ser você colocar 0 em order ele retorna do mais alto para o mais baixo
+            1 do baixo para o mais alto
+            0 mais alto para o mais baixo
             </summary>
             <response code="200">retorna um ok e uma listar</response>
         </member>

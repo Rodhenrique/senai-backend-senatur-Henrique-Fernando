@@ -105,7 +105,7 @@ namespace Senai.Senatur.WebApi.Controllers
         }
 
         /// <summary>
-        /// Controller responsável por listar os pacotes de viagens da Senatur
+        /// Controller responsável por listar os pacotes de viagens ativas da Senatur
         /// </summary>
         /// <response code="200">retorna um ok e uma listar de </response>
         [HttpGet("ListarPorPacoteAtivo")]
@@ -116,7 +116,7 @@ namespace Senai.Senatur.WebApi.Controllers
         }
 
         /// <summary>
-        /// Controller responsável por listar os pacotes de viagens da Senatur
+        /// Controller responsável por listar os pacotes de viagens  inativa da Senatur
         /// </summary>
         /// <response code="200">retorna um ok e uma listar</response>
         [HttpGet("ListarPorPacoteInativo")]
@@ -124,6 +124,33 @@ namespace Senai.Senatur.WebApi.Controllers
         public IActionResult ListarPorInativo()
         {
             return Ok(_pacoteRepository.ListarPacoteInativo());
+        }
+
+        /// <summary>
+        /// Controller responsável por listar os pacotes de viagens por nome da cidade da Senatur
+        /// Nome colocar o nome da cidade
+        /// </summary>
+        /// <response code="200">retorna um ok e uma listar</response>
+        [HttpGet("ListarNomeCidade/{nome}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public IActionResult ListarPorCity(string nome)
+        {
+            return Ok(_pacoteRepository.ListarPorCity(nome));
+        }
+
+        /// <summary>
+        /// Controller responsável por listar os pacotes de viagens por ordenar pelo preço do pacote da Senatur
+        /// ser você colocar 1 em order ele retorna do baixo para o mais alto
+        /// ser você colocar 0 em order ele retorna do mais alto para o mais baixo
+        /// 1 do baixo para o mais alto
+        /// 0 mais alto para o mais baixo
+        /// </summary>
+        /// <response code="200">retorna um ok e uma listar</response>
+        [HttpGet("ListarPorPreco/{order}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public IActionResult ListarPorPreco(int order)
+        {
+            return Ok(_pacoteRepository.ListarPorPreco(order));
         }
     }
 }
