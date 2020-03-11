@@ -123,7 +123,42 @@ namespace Senai.Senatur.WebApi.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public IActionResult ListarPorInativo()
         {
-            return Ok(_pacoteRepository.ListarPacoteInativo());
+
+            var buscar = _pacoteRepository.ListarPacoteInativo(Id);
+
+            if (buscar == null)
+            {
+                return StatusCode(404, "Pacote invalido");
+            }
+            else
+            {
+                return StatusCode(202);
+            }
+        }
+
+        /// <summary>
+        /// Controller responsável por listar os pacotes de viagens por ordenar pelo preço do pacote da Senatur
+        /// ser você colocar 1 em order ele retorna do baixo para o mais alto
+        /// ser você colocar 0 em order ele retorna do mais alto para o mais baixo
+        /// 1 do baixo para o mais alto
+        /// 0 mais alto para o mais baixo
+        /// </summary>
+        /// <response code="200">retorna um ok e uma listar</response>
+        [HttpGet("ListarPorPreco/{order}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public IActionResult ListarPorPreco(int order)
+        {
+
+            var buscar = _pacoteRepository.ListarPacoteInativo(Id);
+
+            if (buscar == null)
+            {
+                return StatusCode(404, "Nao encontrado");
+            }
+            else
+            {
+                return StatusCode(202);
+            }
         }
     }
 }
