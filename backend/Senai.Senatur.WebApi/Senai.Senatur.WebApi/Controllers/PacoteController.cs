@@ -103,8 +103,6 @@ namespace Senai.Senatur.WebApi.Controllers
             _pacoteRepository.Deletar(id);
             return StatusCode(202, "seu TipoUsuario foi deletado com sucesso");
         }
-<<<<<<< HEAD:backend/Senai.Senatur.WebApi/Senai.Senatur.WebApi/Controllers/PacoteController.cs
-=======
 
         /// <summary>
         /// Controller responsável por listar os pacotes de viagens da Senatur
@@ -127,6 +125,5 @@ namespace Senai.Senatur.WebApi.Controllers
         {
             return Ok(_pacoteRepository.ListarPacoteInativo());
         }
->>>>>>> parent of 9d51f02... 32 commit:Senai.Senatur.WebApi/Senai.Senatur.WebApi/Controllers/PacoteController.cs
     }
 }
