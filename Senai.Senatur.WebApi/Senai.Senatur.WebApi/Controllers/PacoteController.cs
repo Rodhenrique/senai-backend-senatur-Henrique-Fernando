@@ -27,6 +27,7 @@ namespace Senai.Senatur.WebApi.Controllers
         /// Controller responsável por listar os pacotes de viagens da Senatur
         /// </summary>
         /// <response code="200">retorna um ok e uma listar</response>
+        [Authorize]
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public IActionResult Get()
@@ -39,6 +40,7 @@ namespace Senai.Senatur.WebApi.Controllers
         /// </summary>
         /// <response code="200">retorna um usuario do Id Solicitando</response>
         /// <response code="404">caso Id não existe retorna um Not Found</response> 
+        [Authorize(Roles = "1")]
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -60,6 +62,7 @@ namespace Senai.Senatur.WebApi.Controllers
         /// </summary>
         /// <response code="201">retorna um Created caso for criado</response>
         /// <response code="404">caso estiver algun campo nulo retorna um not found</response> 
+        [Authorize(Roles = "1")]
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -79,6 +82,7 @@ namespace Senai.Senatur.WebApi.Controllers
         /// Controller responsável pelos Atualizar um pacote existente na Senatur
         /// </summary>
         /// <response code="202">retorna um aceito e atualizar um pacote</response>
+        [Authorize(Roles = "1")]
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status202Accepted)]
         public IActionResult atualizar(Pacotes pacotes)
@@ -91,6 +95,7 @@ namespace Senai.Senatur.WebApi.Controllers
         /// Controller responsável pelos Deletar um pacote da Senatur
         /// </summary>
         /// <response code="202">retorna um aceito e deletar seu pacote</response>
+        [Authorize(Roles = "1")]
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status202Accepted)]
         public IActionResult deletar(int id)

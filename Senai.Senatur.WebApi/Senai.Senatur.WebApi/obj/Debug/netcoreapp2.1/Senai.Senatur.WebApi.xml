@@ -47,6 +47,12 @@
             <summary>
             Controller responsável por listar os pacotes de viagens da Senatur
             </summary>
+            <response code="200">retorna um ok e uma listar de </response>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.PacoteController.ListarPorInativo">
+            <summary>
+            Controller responsável por listar os pacotes de viagens da Senatur
+            </summary>
             <response code="200">retorna um ok e uma listar</response>
         </member>
         <member name="M:Senai.Senatur.WebApi.Controllers.TipoUsuarioController.Get">
@@ -71,7 +77,7 @@
         </member>
         <member name="M:Senai.Senatur.WebApi.Controllers.TipoUsuarioController.atualizar(Senai.Senatur.WebApi.Domains.TiposUsuario)">
             <summary>
-            Controller responsável pelos atualizar um tipo usuario existente Senatur
+            Controller responsável em atualizar um tipo de usuario existente Senatur
             </summary>
             <response code="202">retorna um aceito e atualizar o seu Tipo Usuario</response>
         </member>

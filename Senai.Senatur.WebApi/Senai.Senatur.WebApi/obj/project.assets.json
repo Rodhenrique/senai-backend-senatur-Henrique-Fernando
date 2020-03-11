@@ -12863,5 +12863,13 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema ao ler o arquivo de cache C:\\Users\\53167369825\\Desktop\\senai-backend-senatur-Henrique-Fernando\\Senai.Senatur.WebApi\\Senai.Senatur.WebApi\\obj\\Senai.Senatur.WebApi.csproj.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

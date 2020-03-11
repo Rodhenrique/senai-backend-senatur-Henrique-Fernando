@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.Senatur.WebApi.Domains;
@@ -26,6 +27,7 @@ namespace Senai.Senatur.WebApi.Controllers
         /// Controller responsável pelos Listar os usuarios da Senatur
         /// </summary>
         /// <response code="200">retornar um Ok e a listar de usuarios</response>
+        [Authorize]
         [HttpGet]
         public IActionResult Get()
         {
@@ -38,6 +40,7 @@ namespace Senai.Senatur.WebApi.Controllers
         /// </summary>
         /// <response code="202">retorna um aceito e o usuario buscado</response>
         /// <response code="404">caso o Id NÃO EXISTE retorna Not Found</response> 
+        [Authorize(Roles = "1")]
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -60,6 +63,7 @@ namespace Senai.Senatur.WebApi.Controllers
         /// </summary>
         /// <response code="201">retorna um criado e criar o usuario</response>
         /// <response code="404">casp algun campo estiver nulo retorna Not Found</response> 
+        [Authorize(Roles = "1")]
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -80,6 +84,7 @@ namespace Senai.Senatur.WebApi.Controllers
         /// Controller responsável pelos atualizar um usuario existente na Senatur
         /// </summary>
         /// <response code="202">retorna um aceito e atualizar o seu Usuario</response>
+        [Authorize(Roles = "1")]
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status202Accepted)]
         public IActionResult atualizar(Usuarios usuarioAtualizado)
